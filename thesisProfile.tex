@@ -35,7 +35,7 @@
       \break
       \break
       \small{
-        Proyecto de Grado para obtener el Título de Licenciatura en Informática \break
+        Para obtener el Título de Licenciatura en Informática \break
         Mención Ingeniería de Sistemas Informáticos\break
       }
       \break
@@ -86,13 +86,15 @@ dependiendo el tipo de grafo que deseamos generar, por ejemplo: si el objetivo e
 (Grafo conexo con \(E\) vertices y \(E - 1\) aristas)
 se debe tener control sobre donde se genera un nuevo nodo y arista, verificando que no existan
 ciclos, caso contrario el modelado no cumpliria con su objetivo. Tambien podriamos mencionar que construir
-un Grafo Completo (Grafo con \(E\) verticies y \( \frac{E * (E - 1)}{2}\) aristas) tiene una complejidad No Polinomial NP, 
+un Grafo Completo (Grafo con \(E\) vertices y \( \frac{E * (E - 1)}{2}\) aristas) tiene una complejidad No Polinomial NP, 
 haciendo que sea solo posible generar grafos completos con un limite de 20 nodos aproximandamente.
 Otro factor importante es que al ser este un modelado de grafos aleatorios, cada vertices a ser agregado,
-tiene cierta probabilidad de ser tomado en cuenta en el grafo generado o no. 
-Existen ya varios algoritmos generadores de grafos, como ser los modelos de grafos de Erdős-Rényi,
-y algunas variantes de dicho modelado, que no generan grafos representativos y se toman bastante tiempo en 
-el generado. Dados estos argumentos,  el objetivo de este trabajo es crear un modelo generador de grafos aleatorios representativos de 
+tiene cierta probabilidad de ser tomado en cuenta en el grafo generado o no. \hfill\break\break 
+
+Existen varios algoritmos generadores de grafos, como ser los modelos de grafos de Erdős-Rényi,
+y algunas variantes de dicho modelado, que no generan grafos representativos (no se asemejan a redes del mundo real), no pueden generar grafos con grandes 
+cantidades de vertices y se toman bastante tiempo en 
+el generado. Dados estos argumentos,  el objetivo de este trabajo es crear un modelo generador de grafos aleatorios que sean representativos de 
 forma eficiente. Cuando decimos eficiente, nos referimos a: mejores tiempos de ejecucion para
 el generado y el minimo uso de CPU, GPU y memoria. \hfill \break \break
 Debido a que en Teoría de Grafos existe una infinidad de tipos de grafos, nos enfocaremos simplemente en un conjunto 
@@ -123,6 +125,13 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Autor:} Lic. Manuel Sáenz \\
   \textbf{A\~no:} 2019\\
   \textbf{Institucion:} Universidad de Buenos Aires\\
+  En el mencionado trabajo, se estudia la evolucion y convergencia de algoritmos
+  generadores de grafos, asi de esa forma lograr delimitar el algoritmo de modelado 
+  de grafos Erdös-Rényi. Para demostrar sus limitaciones se demuestra que para los grafos
+  generados por el modelo Erdös-Rényi es posible construir un conjunto independiente  maximo
+  en tiempo polinomal. Pese a que el problema de construir Conjuntos Independientes Maximos es
+  del tipo NP-dificil.
+
 \end{itemize}
 
 \begin{itemize}
@@ -130,6 +139,9 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Autor:} Sadegh Heyrani, Nobari Xuesong Lu \\
   \textbf{A\~no:} 2011\\
   \textbf{Institucion:} Universidad Nacional de Singapore\\
+  En el mencionado trabajo, se plante un modelo generador de grafos, usando programacion
+  paralela y gpu junto a su algoritmo ER y ZER (creado por ellos). Los grafos que pueden ser
+  generados por este metodo son: Grafos dirigidos y no dirigidos.
 \end{itemize}
 
 \begin{itemize}
@@ -137,6 +149,10 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Autor:} Rosa Alejandra García Grisales, Juan Carlos Agudelo Calderón\\
   \textbf{A\~no:} 2015\\
   \textbf{Institucion:} Universidad Católica De Pereira\\
+  En el mencionado trabajo, se plante implementar un generador de grafos para el emulador Mininet, que es 
+  una aplicacion desarrollada para la investigacion de prototipos SDN en tiempo real.
+  Este metodo usa un Modelo de Waxmax (variante de Erdös-Rényi), que construye grafos en tiempo lineal, 
+  pero usando bastante memoria limitando el generado a aproximandamente 1000 nodos solamente.
 \end{itemize}
 
 \begin{itemize}
@@ -144,31 +160,29 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Autor:} Mikhail Drobyshevskiy, Denis Turdakov\\
   \textbf{A\~no:} 2019\\
   \textbf{Institucion:} Instituto de Física y Tecnología de Moscú\\
+  En este trabajo, se hace una analisis a profundidad de el Algoritmo Erdös-Rényi.
+  Se indentifico seis direcciones donde este modelos tienen sus aplicaciones: comprensión de redes, análisis, extrapolación, puntos de referencia, modelos nulos y aleatorización. 
+
 \end{itemize}
 
 
 
 \section{Planteamiento del problema}
-  Como ya se hab\'ia sugerido anteriormente, el modelado de grafos juega un rol 
-  importante en el analisis de redes complejas. Nos ayudan a entender, controlar
-  predecir fenomenos que pueden ocurrir en redes sociales, redes biologicas, internet
-  y muchos mas. Modelar estos grafos manualmente para cada aplicacion podria requerir
-  demasiado tiempo y esfuerzo.
+  El modelado de grafos juega un rol importante en el analisis de redes complejas. 
+  Nos ayudan a entender, controlar predecir fenomenos que pueden ocurrir en redes sociales, 
+  redes biologicas, internet y muchos mas. Modelar estos grafos manualmente para cada aplicacion podria requerir
+  demasiado tiempo y esfuerzo. Aunque ya existen, varios modelos generadores de grafos, esto no suelen ser representativos
+  y al mismo tiempo son costosos en tiempo y memoria.
   \subsection{Problema central}
-    ¿C\'omo podriamos modelar estos grafos o topologias en un tiempo eficiente?
-  \subsection{Problemas secundarios}
-    \begin{itemize}
-      \guion Construir un grafo completo es NP. 
-      \guion Como comprobar si el model fue generado en un tiempo eficiente.
-    \end{itemize}
+     ¿Con que grado de fiabilidad los modelados generadores de grafos aleatorios actuales puede construir grafos representativos en tiempo y coste de memoria minimos? 
+
 \section{Hip\'otesis}
-  El metodo propuesto para la generacion de grafos de forma aleatorio 
-  tendro un grado mayor de eficiencia con respecto a los metodos
-  usados anteriormente por otras investigaciones en un 95\%.
+  El metodo propuesto para la generacion de grafos aleatorios usando GPU y programacion paralela 
+  genera grafos representativos en tiempo y memoria eficiente con una fiabilidad del 90\%.
 
 \section{Definicion de objectivos}
   \subsection{Objetivo general}
-  Implementar un modelo generador de grafos aleatorios para usarlos como casos de prueba.
+  Desarrolar un modelo generador de grafos aleatorios representativos y eficiente en tiempo y memoria.
   \subsection{Objetivos secundarios}
       \begin{itemize}
         \guion Analizar y diseñar un modelo generador de grafos aleatorios para: Grafos directos acíclicos (DAG), Grafos Bipartitos, Grafos completos, Grafos no dirigidos conexos y no conexos, y árboles.
@@ -177,15 +191,16 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
       \end{itemize}
 \section{\justificacion}
   \subsection{\justificacion econ\'omica}
-    Modelar y/o generar grafos de manera eficiente significa que se reduciran los costos de energia y se
-    eliminara el tiempo invertido en el modelado de las topografias. 
+    Para el analisis de diferentes redes, se requiere tener acceso a distintas redes de prueba, para simulacionas y estudios.
+    Generar  estas redes o grafos de manera eficiente significa que se reduciran los costos de energia y se
+    eliminara el tiempo invertido en dicho modelado.
   \subsection{\justificacion social}
-    El impacto que tienen las redes sociales hoy en d\'ia en la sociedad es bastante notorio,
-    estas redes sociales siempre esta a la mejora de sus algorimos debido al creciemiento en referencia a usuarios.
-    Para esto es necesario investigar y probar dichos algoritmos en topologias aleatorias.
+    El impacto que tienen las redes sociales hoy en d\'ia en la sociedad ha marcado un hito en la forma de comunicarnos,
+    debido a su creciemiento actual estas redes sociales siempre esta a la mejora de sus algorimos.
+    Para esto es necesario investigar y probar dichos algoritmos en grafos aleatorias.
   \subsection{\justificacion cient\'fica}
-    El presente trabajo combinara tecnicas algor\'itmicas, mascaras de bits utilizando tecnicas
-    matematicas de tal manera que el modelado de las topologias sea eficiente,
+    El presente trabajo combinara tecnicas algor\'itmicas, mascaras de bits, con tecnicas
+    matematicas, Hashing, de tal manera que el modelado de las redes o grafos sea eficiente,
     esto se puede verificar usando notaciones de complejidad algor\'itmicas.
 \section{Alcances y limites}
   \subsection{Alcances}
@@ -195,11 +210,10 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
             conexos y no conexos, y arboles de manera eficiente.
       \end{itemize}
   \subsection{L\'imites}
-    El siguiente trabajo no contempla los siguientes aspectos
     \begin{itemize}
-      \guion Los grafos que no esten contemplados en los alcances,
-             ya que probablemente sean tipos de grafos NP (Grafos Planares).
+      \guion Algunos tipos de grafos con construcciones y solucion no polinomial NP no seran tomados en cuenta.
     \end{itemize}
+
 \section{Metodolog\'ia}
   Para el desarrollo del presente proyecto se utilizara un 
   \textbf{Metodo de investigacion experimental} para cumplir con los 
