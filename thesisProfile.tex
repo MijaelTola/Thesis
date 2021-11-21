@@ -24,7 +24,7 @@
         CARRERA DE INFORMATICA\\
       }
       \hfill \break
-      \includegraphics[width=5cm,height=10cm]{umsa}
+      \includegraphics[width=5cm,height=11cm]{umsa}
       \break
       \begin{large}
         PERFIL DE TESIS DE GRADO
@@ -68,29 +68,52 @@
 \renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
 
 \section{Introduccion} 
-El uso generalizado de grafos aleatorios se ha destacado en el contexto de las 
+Una red o grafo es un sistema compuesto por objetos discretos (vertices) y una relación (arista) entre algunos pares
+de ellos. Son herramientas de modelado ubicuas en muchos campos de investigación. 
+Algunos ejemplos comunes incluyen redes sociales, neuronales, de proteínas y de comunicación.
+Hoy en dia con el poder de computo disponible, han hecho que el estudio de redes y
+herramientas para analizarlas sean temas en alza dentro de la comunidad académica.\hfill \break
+
+Los grafos aleatorios son construcciones probabilísticas que permiten definir realizaciones
+aleatorias de grafos. 
+El uso generalizado de grafos aleatorios se ha destacado en el contexto de las  
 aplicaciones de bases de datos y análisis de algoritmos durante 
 varios años. Esto se debe a que tales estructuras de datos resultan ser muy útiles 
 en muchas  aplicaciones, desde el análisis de redes complejas hasta el estudio de 
-algoritmos aleatorios. El problema es que generar estos grafos aleatorios no es una 
-tarea fácil. Y es ahí donde entramos, con un modelo generador de grafos aleatorios que 
-generan grafos aleatorios en un tiempo eficiente. Debido a que en Teoría de Grafos 
-existe una infinidad de tipos de grafos, nos enfocaremos simplemente en un conjunto 
-de grafos que son: Grafos directos acíclicos (DAG), Grafos Bipartitos, Grafos completos,
- Grafos no dirigidos conexos y no conexos, y árboles.
+algoritmos aleatorios. Generar estos grafos de manera aleatoria tiene un nivel de dificultad
+bastante alta, ya que al momento de generar un grafo se tienen que controlar algunas propiedades 
+dependiendo el tipo de grafo que deseamos generar, por ejemplo: si el objetivo es construir un Arbol 
+(Grafo conexo con \(E\) vertices y \(E - 1\) aristas)
+se debe tener control sobre donde se genera un nuevo nodo y arista, verificando que no existan
+ciclos, caso contrario el modelado no cumpliria con su objetivo. Tambien podriamos mencionar que construir
+un Grafo Completo (Grafo con \(E\) verticies y \( \frac{E * (E - 1)}{2}\) aristas) tiene una complejidad No Polinomial NP, 
+haciendo que sea solo posible generar grafos completos con un limite de 20 nodos aproximandamente.
+Otro factor importante es que al ser este un modelado de grafos aleatorios, cada vertices a ser agregado,
+tiene cierta probabilidad de ser tomado en cuenta en el grafo generado o no. 
+Existen ya varios algoritmos generadores de grafos, como ser los modelos de grafos de Erdős-Rényi,
+y algunas variantes de dicho modelado, que no generan grafos representativos y se toman bastante tiempo en 
+el generado. Dados estos argumentos,  el objetivo de este trabajo es crear un modelo generador de grafos aleatorios representativos de 
+forma eficiente. Cuando decimos eficiente, nos referimos a: mejores tiempos de ejecucion para
+el generado y el minimo uso de CPU, GPU y memoria. \hfill \break \break
+Debido a que en Teoría de Grafos existe una infinidad de tipos de grafos, nos enfocaremos simplemente en un conjunto 
+de grafos que son: Grafos directos acíclicos (DAG), Grafos Bipartitos, Grafos completos, 
+Grafos no dirigidos conexos y no conexos, y árboles.
 
 \section{Antecedentes}
-Se conocen muchos modelos de grafos aleatorios, que reflejan los diversos tipos de redes
-complejas que se encuentran en diferentes áreas. En un contexto matemático, el grafo aleatorio 
-se refiere casi exclusivamente al modelo de grafo aleatorio de Erdős-Rényi. 
-Se ha argumentado correctamente que los grafos aleatorios de Erdős-Rényi
-generalmente no son representativos de los grafos de la vida real, como las redes de comunicación,
-las redes sociales o las estructuras moleculares, que exhiben distribuciones de grados específicas y propiedades 
-resultantes. Sin embargo, si los grafos de la vida real difieren significativamente de los grafos 
-de Erdős-Rényi, todavía se necesitan modelos de Erdős-Rényi para caracterizar estas diferencias y cuantificar 
-su importancia. La generación de grafos aleatorios con restricciones prescritas generalmente requiere una maquinaria diferente 
-y más compleja. El método predominante es el uso de la mezcla de cadenas de Markov, para la generación de estructuras 
-de marca como grafos bipartitos de transacciones y elementos con restricciones de grado prescritas.\\
+El primer modelo de grafos aleatorios fue introducidos por P. Erdös en 1959 como una
+herramienta para aplicar el método probabilístico para probar una relación asintótica entre
+la cintura y el número cromático de grafos generales. Más tarde, junto con A. Rényi,
+continuó el estudio de este modelo. Este es uno de los dos modelos conocidos
+hoy en día como modelos de Erdös-Rényi. Consiste en la construcción de grafos finitos con un
+número fijo de aristas distribuidas uniformemente a lo largo del conjunto de pares de vértices;
+mientras que el segundo modelo que comparte el mismo nombre, se debe a E. Gilbert, y
+consiste en grafos finitos obtenidos al establecer, independientemente y con la misma probabilidad, una arista entre cada par de vértices. A partir de ahí, se desarrollaron muchos modelos
+de grafos aleatorios diferentes. Estos probaron ser no sólo construcciones interesantes, sino
+también muy útiles en aplicaciones: como herramientas para estudiar escenarios promedio en
+redes complejas y como una forma de explorar posibles mecanismos que dan lugar a muchas
+de las características distintivas de las redes observadas en el mundo real. Por ejemplo, incluso
+un modelo tan simple como el de Erdös-Rényi exhibe la propiedad del mundo pequeño (prevalencia de distancias relativamente cortas entre la mayoría de los pares de vértices) observada
+en muchas redes sociales y de comunicación.
 
 Al respecto de las investigaciones relacionadas con el tema podemos destacar las siguientes:
 
