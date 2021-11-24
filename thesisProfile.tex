@@ -18,10 +18,10 @@
 
 \title{
     \textbf{
-      \Large{UNIVERSIDAD MAYOR DE SAN ANDRES}\\
+      \Large{UNIVERSIDAD MAYOR DE SAN ANDR\'ES}\\
       \normalsize{
         FACULTAD DE CIENCIAS PURAS Y NATURALES\\
-        CARRERA DE INFORMATICA\\
+        CARRERA DE INFORM\'ATICA\\
       }
       \hfill \break
       \includegraphics[width=5cm,height=11cm]{umsa}
@@ -30,7 +30,7 @@
         PERFIL DE TESIS DE GRADO
         \break
         \break
-        GENERADOR DE GRAFOS ALEATORIOS PARA CASOS DE PRUEBA
+        MODELO GENERADOR DE GRAFOS ALEATORIOS 
       \end{large}
       \break
       \break
@@ -68,7 +68,7 @@
 \renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
 
 \section{Introduccion} 
-Una red o grafo es un sistema compuesto por objetos discretos (vertices) y una relación (arista) entre algunos pares
+Una red o grafo es un sistema compuesto por objetos discretos (v\'ertices) y una relación (arista) entre algunos pares
 de ellos. Son herramientas de modelado ubicuas en muchos campos de investigación. 
 Algunos ejemplos comunes incluyen redes sociales, neuronales, de proteínas y de comunicación.
 Hoy en dia con el poder de computo disponible, han hecho que el estudio de redes y
@@ -89,14 +89,15 @@ ciclos, caso contrario el modelado no cumpliria con su objetivo. Tambien podriam
 un Grafo Completo (Grafo con \(E\) vertices y \( \frac{E * (E - 1)}{2}\) aristas) tiene una complejidad No Polinomial NP, 
 haciendo que sea solo posible generar grafos completos con un limite de 20 nodos aproximandamente.
 Otro factor importante es que al ser este un modelado de grafos aleatorios, cada vertices a ser agregado,
-tiene cierta probabilidad de ser tomado en cuenta en el grafo generado o no. \hfill\break\break 
+tiene cierta probabilidad de ser tomado en cuenta en el grafo generado o no. \hfill\break 
 
 Existen varios algoritmos generadores de grafos, como ser los modelos de grafos de Erdős-Rényi,
 y algunas variantes de dicho modelado, que no generan grafos representativos (no se asemejan a redes del mundo real), no pueden generar grafos con grandes 
 cantidades de vertices y se toman bastante tiempo en 
-el generado. Dados estos argumentos,  el objetivo de este trabajo es crear un modelo generador de grafos aleatorios que sean representativos de 
-forma eficiente. Cuando decimos eficiente, nos referimos a: mejores tiempos de ejecucion para
-el generado y el minimo uso de CPU, GPU y memoria. \hfill \break \break
+el generado [B2]. 
+Dados estos argumentos,  el objetivo de este trabajo es crear un modelo generador de grafos aleatorios que sean representativos de 
+forma eficiente. Cuando decimos representativos, nos referimos a Redes que se asemejen al mundo real y cuando decimos eficiente, nos referimos a: mejores tiempos de ejecucion para
+el generado y el minimo uso de CPU, GPU y memoria comparando a modelos ya existentes. \hfill \break \break
 Debido a que en Teoría de Grafos existe una infinidad de tipos de grafos, nos enfocaremos simplemente en un conjunto 
 de grafos que son: Grafos directos acíclicos (DAG), Grafos Bipartitos, Grafos completos, 
 Grafos no dirigidos conexos y no conexos, y árboles.
@@ -141,7 +142,7 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Institucion:} Universidad Nacional de Singapore\\
   En el mencionado trabajo, se plante un modelo generador de grafos, usando programacion
   paralela y gpu junto a su algoritmo ER y ZER (creado por ellos). Los grafos que pueden ser
-  generados por este metodo son: Grafos dirigidos y no dirigidos.
+  generados por este modelado son: Grafos dirigidos y no dirigidos.
 \end{itemize}
 
 \begin{itemize}
@@ -151,7 +152,7 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \textbf{Institucion:} Universidad Católica De Pereira\\
   En el mencionado trabajo, se plante implementar un generador de grafos para el emulador Mininet, que es 
   una aplicacion desarrollada para la investigacion de prototipos SDN en tiempo real.
-  Este metodo usa un Modelo de Waxmax (variante de Erdös-Rényi), que construye grafos en tiempo lineal, 
+  Este m\'etodo usa un Modelo de Waxmax (variante de Erdös-Rényi), que construye grafos en tiempo lineal, 
   pero usando bastante memoria limitando el generado a aproximandamente 1000 nodos solamente.
 \end{itemize}
 
@@ -169,16 +170,44 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
 
 \section{Planteamiento del problema}
   El modelado de grafos juega un rol importante en el analisis de redes complejas. 
-  Nos ayudan a entender, controlar predecir fenomenos que pueden ocurrir en redes sociales, 
-  redes biologicas, internet y muchos mas. Modelar estos grafos manualmente para cada aplicacion podria requerir
-  demasiado tiempo y esfuerzo. Aunque ya existen, varios modelos generadores de grafos, esto no suelen ser representativos
-  y al mismo tiempo son costosos en tiempo y memoria.
+  Nos ayudan a entender, controlar predecir fen\'omenos que pueden ocurrir en redes sociales, 
+  redes biol\'ogicas, internet y muchos mas. Modelar estos grafos manualmente para cada aplicacion podria requerir
+  demasiado tiempo y esfuerzo. Si ponemos en comparacion el modelado manual contra un modelado bajo un computador,
+  veriamos que las tecnologias actuales, generan estos grafos en complejidas O(\(n^2\) en tiempo y memoria; 
+  para un computador el limite de numero de v\'ertices generados es 10000, hacer ese modelado manualmente tomaria dias
+  consumiendo tiempo y esfuerzo. Aunque ya existen, varios modelos generadores de grafos, tales como el Modelado  Erdös-Rényi, esto no suelen ser representativos
+  y al mismo tiempo son costosos en tiempo y memoria [B2].\hfill\break
+
+  Otros autores han afirmado que:\\
+  En la era del BIG DATA, hay muchas redes masivas que deben explotarse y analizarse. Ya que
+  tales redes no se pueden manejar en la memoria de una sola computadora, nuevos métodos de agrupamiento
+  se han introducido para modelos avanzados de computación (Buzun et al., 2014; Zeng & Yu, 2016).
+  Estos algoritmos utilizan representaciones de entrada jerárquicas, lo que implica que los experimentos realizados en Grafos de referencia de tamaño pequeño o mediano no se pueden utilizar para predecir el rendimiento en instancias mucho más grandes (Emmons et al., 2016). Desafortunadamente, muchos puntos de referencia de agrupamiento de gráficos
+  Los generadores actualmente disponibles no pueden generar los Grafos del tamaño necesario (Bae & Howe,
+  2015; Buzun et al., 2014).
+  \textit{ (Artificial Benchmark for Community Detection (ABCD)—Fast random graph model with community structure, 2021)}
   \subsection{Problema central}
      ¿Con que grado de fiabilidad los modelos generadores de grafos aleatorios actuales puede construir grafos representativos en tiempo y coste de memoria minimos? 
 
 \section{Hip\'otesis}
-  El metodo propuesto para la generacion de grafos aleatorios usando GPU y programacion paralela 
+  El modelo propuesto para la generacion de grafos aleatorios usando GPU y programacion paralela 
   genera grafos representativos en tiempo y memoria eficiente con una fiabilidad del 90\%.
+
+  \subsection{Operacionalizaci\'on de variables}
+  Se pudieron identificar las siguientes variables:\hfill \break \break
+  \begin{tabular}{||c c c c||}
+    \hline
+    Concepto & Dimension & Indicador & Escala de medicion\\
+    \hline
+    Eficiencia &  & Tiempo de ejecucion & Segundos\\
+              &   & Memoria usada en el proceso del generado & Megabytes\\
+    \hline
+    Grafo Representativo & & Numero de nodos &  Numero Entero\\ 
+              &   & Numero de Aristas & Numero Entero\\
+    \hline
+    Aleatoriedad & & Entropia  & Numero Real [0, 1]\\
+    \hline
+  \end{tabular}
 
 \section{Definicion de objectivos}
   \subsection{Objetivo general}
@@ -216,7 +245,7 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
 
 \section{Metodolog\'ia}
   Para el desarrollo del presente trabajo se utilizara un 
-  \textbf{Metodo de investigacion experimental} para cumplir con los 
+  \textbf{M\'etodo de investigacion experimental} para cumplir con los 
     objectivos propuestos para el modelo generador de grafos aleatorios. 
     Esta se dividirar en las siguientes etapas.
     \begin{enumerate}
@@ -274,15 +303,18 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
     \end{center}
 
 \section{Bibliograf\'ia}
-  Manuel Zaens. (2019). Desempeño asintotico de algoritmos secuenciales en grafos aleatorios. 2019, de Universidad de Buenos Aires Sitio web:\hfill\break http://cms.dm.uba.ar/academico/carreras/doctorado/Tesis\_Saenz\_corregida(1).pdf \hfill \break
+  [B1] Manuel Zaens. (2019). Desempeño asintotico de algoritmos secuenciales en grafos aleatorios. 2019, de Universidad de Buenos Aires Sitio web:\hfill\break http://cms.dm.uba.ar/academico/carreras/doctorado/Tesis\_Saenz\_corregida(1).pdf \hfill \break
   \break
-  Sadegh Heyrani, Nobari Xuesong Lu. (2011). Generaci\'on r\'apida de gr\'aficos aleatorios. 2019, de Universidad Nacional de Singapore Sitio web: https://www.cs.au.dk/~karras/rg.pdf
-  \break
-  \break
-  Rosa Alejandra Garc\'ia Grisales, Juan Carlos Agudelo Calder\'on. (2015). Implementacion de un generador de topologias aleatorias en emulador de red mininet.. 2019, de Universidad Cat\'olica De Pereira Sitio web: https://repositorio.ucp.edu.co/bitstream/10785/3678/1/CDMIST122.pdf
+  [B2] Sadegh Heyrani, Nobari Xuesong Lu. (2011). Generaci\'on r\'apida de gr\'aficos aleatorios. 2019, de Universidad Nacional de Singapore Sitio web: https://www.cs.au.dk/~karras/rg.pdf
   \break
   \break
-  Mikhail Drobyshevskiy, Denis Turdakov. (2019). Modelado de grafos aleatorios: una revis\'ion de los conceptos. 2019, de Mikhail Drobyshevskiy, Denis Turdakov Sitio web:\hfill\break https://dl.acm.org/doi/pdf/10.1145/3369782
+  [B3] Rosa Alejandra Garc\'ia Grisales, Juan Carlos Agudelo Calder\'on. (2015). Implementacion de un generador de topologias aleatorias en emulador de red mininet. 2019, de Universidad Cat\'olica De Pereira Sitio web: https://repositorio.ucp.edu.co/bitstream/10785/3678/1/CDMIST122.pdf
+  \break
+  \break
+  [B4] Mikhail Drobyshevskiy, Denis Turdakov. (2019). Modelado de grafos aleatorios: una revis\'ion de los conceptos. 2019, de Mikhail Drobyshevskiy, Denis Turdakov Sitio web:\hfill\break https://dl.acm.org/doi/pdf/10.1145/3369782
+  \break
+  \break
+  [B5] Bogumił Kaminski, Paweł Prałat2, (2021). Artificial Benchmark for Community Detection(ABCD)—Fast random graph model with community structure. 2021 de Universidad de Cambridge web:\hfill\break https://www.cambridge.org/core/journals/network-science/article/artificial-benchmark-for-community-detection-abcdfast-random-graph-model-with-community-structure/453FE29A1FA3C1798B0EC116587FE422
 \section{Anexos}
 \subsection{Cronograma de avance}
 \includegraphics[width=18cm,height=15cm]{calendario.png}
