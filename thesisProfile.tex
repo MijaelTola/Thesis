@@ -169,29 +169,29 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
 
 
 \section{Planteamiento del problema}
-  El modelado de grafos juega un rol importante en el analisis de redes complejas. 
+  El modelado de grafos juega un rol importante en el an\'alisis de redes complejas. 
   Nos ayudan a entender, controlar predecir fen\'omenos que pueden ocurrir en redes sociales, 
-  redes biol\'ogicas, internet y muchos mas. Modelar estos grafos manualmente para cada aplicacion podria requerir
-  demasiado tiempo y esfuerzo. Si ponemos en comparacion el modelado manual contra un modelado bajo un computador,
-  veriamos que las tecnologias actuales, generan estos grafos en complejidas O(\(n^2\) en tiempo y memoria; 
-  para un computador el limite de numero de v\'ertices generados es 10000, hacer ese modelado manualmente tomaria dias
-  consumiendo tiempo y esfuerzo. Aunque ya existen, varios modelos generadores de grafos, tales como el Modelado  Erdös-Rényi, esto no suelen ser representativos
+  redes biol\'ogicas, internet y muchos mas. Aunque ya existen, varios modelos generadores de grafos, tales como el Modelado  Erdös-Rényi, esto no suelen ser representativos
   y al mismo tiempo son costosos en tiempo y memoria [B2].\hfill\break
 
   Otros autores han afirmado que:\\
-  En la era del BIG DATA, hay muchas redes masivas que deben explotarse y analizarse. Ya que
-  tales redes no se pueden manejar en la memoria de una sola computadora, nuevos métodos de agrupamiento
-  se han introducido para modelos avanzados de computación (Buzun et al., 2014; Zeng & Yu, 2016).
-  Estos algoritmos utilizan representaciones de entrada jerárquicas, lo que implica que los experimentos realizados en Grafos de referencia de tamaño pequeño o mediano no se pueden utilizar para predecir el rendimiento en instancias mucho más grandes (Emmons et al., 2016). Desafortunadamente, muchos puntos de referencia de agrupamiento de gráficos
-  Los generadores actualmente disponibles no pueden generar los Grafos del tamaño necesario (Bae & Howe,
-  2015; Buzun et al., 2014).
+
+  \footnotesize{
+    En la era del BIG DATA, hay muchas redes masivas que deben explotarse y analizarse. Ya que
+    tales redes no se pueden manejar en la memoria de una sola computadora, nuevos métodos de agrupamiento
+    se han introducido para modelos avanzados de computación (Buzun et al., 2014; Zeng & Yu, 2016).
+    Estos algoritmos utilizan representaciones de entrada jerárquicas, lo que implica que los experimentos realizados en Grafos de referencia de tamaño pequeño o mediano no se pueden utilizar para predecir el rendimiento en instancias mucho más grandes (Emmons et al., 2016). Desafortunadamente, muchos puntos de referencia de agrupamiento de gráficos
+    Los generadores actualmente disponibles no pueden generar los Grafos del tamaño necesario (Bae & Howe,
+    2015; Buzun et al., 2014).
   \textit{ (Artificial Benchmark for Community Detection (ABCD)—Fast random graph model with community structure, 2021)}
+  }
+
   \subsection{Problema central}
-     ¿Con que grado de fiabilidad los modelos generadores de grafos aleatorios actuales puede construir grafos representativos en tiempo y coste de memoria minimos? 
+     ¿Con que grado de fiabilidad los modelos generadores de grafos aleatorios Erdös-Rényi pueden construir grafos representativos en tiempo y coste de memoria minimos? 
 
 \section{Hip\'otesis}
-  El modelo propuesto para la generacion de grafos aleatorios usando GPU y programacion paralela 
-  genera grafos representativos en tiempo y memoria eficiente con una fiabilidad del 90\%.
+  El modelo para la generacion de grafos aleatorios usando GPU (Unidad de procesamiento gr\'afico) y programaci\'on paralela 
+  representa estos Grafos en tiempo y memoria eficiente con una fiabilidad del 90\%.
 
   \subsection{Operacionalizaci\'on de variables}
   Se pudieron identificar las siguientes variables:\hfill \break \break
@@ -202,10 +202,10 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
     Eficiencia &  & Tiempo de ejecucion & Segundos\\
               &   & Memoria usada en el proceso del generado & Megabytes\\
     \hline
-    Grafo Representativo & & Numero de nodos &  Numero Entero\\ 
-              &   & Numero de Aristas & Numero Entero\\
+    Representacion eficaz & & Grado  &  Numero Entero\\ 
+              &   & Numero de componentes & Numero Entero\\
     \hline
-    Aleatoriedad & & Entropia  & Numero Real [0, 1]\\
+    Aleatoriedad & & Entropia  & Numero Real\\
     \hline
   \end{tabular}
 
@@ -215,6 +215,7 @@ Al respecto de las investigaciones relacionadas con el tema podemos destacar las
   \subsection{Objetivos secundarios}
       \begin{itemize}
         \guion Analizar y diseñar un modelo generador de grafos aleatorios para: Grafos directos acíclicos (DAG), Grafos Bipartitos, Grafos completos, Grafos no dirigidos conexos y no conexos, y árboles.
+        \guion Implementar el modelo generador de grafos.
         \guion Verificar que los tiempos al generar los grafos sean eficientes experimentalmente.
         \guion Verificar que el generador de grafos sea eficiente según su complejidad algorítmica.
       \end{itemize}

@@ -1,0 +1,5 @@
+el modelo... representa estos elementos en time y mem eficiente con una fia
+
+implementar el modelo generador de grafos
+ser mas especifico con los graados
+
