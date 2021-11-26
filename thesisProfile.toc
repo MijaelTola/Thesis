@@ -13,12 +13,12 @@
 \contentsline {section}{\numberline {6}Justificaci\'on }{6}%
 \contentsline {subsection}{\numberline {6.1}Justificaci\'on econ\'omica}{6}%
 \contentsline {subsection}{\numberline {6.2}Justificaci\'on social}{6}%
-\contentsline {subsection}{\numberline {6.3}Justificaci\'on cient\'fica}{6}%
+\contentsline {subsection}{\numberline {6.3}Justificaci\'on cient\'ifica}{6}%
 \contentsline {section}{\numberline {7}Alcances y limites}{6}%
 \contentsline {subsection}{\numberline {7.1}Alcances}{6}%
 \contentsline {subsection}{\numberline {7.2}L\'imites}{6}%
 \contentsline {section}{\numberline {8}Metodolog\'ia}{6}%
 \contentsline {section}{\numberline {9}Bibliograf\'ia}{7}%
-\contentsline {section}{\numberline {10}Anexos}{8}%
-\contentsline {subsection}{\numberline {10.1}Cronograma de avance}{8}%
-\contentsline {subsection}{\numberline {10.2}Indice de trabajo}{8}%
+\contentsline {section}{\numberline {10}Anexos}{9}%
+\contentsline {subsection}{\numberline {10.1}Cronograma de avance}{9}%
+\contentsline {subsection}{\numberline {10.2}Indice de trabajo}{9}%

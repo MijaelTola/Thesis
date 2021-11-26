@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.4)  24 NOV 2021 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.4)  26 NOV 2021 07:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -296,135 +296,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--176
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
-
- []
-
-! Misplaced alignment tab character &.
-l.182 ... computación (Buzun et al., 2014; Zeng &
-                                                   Yu, 2016).
-? 
-! Misplaced alignment tab character &.
-l.184 ...r los Grafos del tamaño necesario (Bae &
-                                                   Howe,
-? 
-LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5> on input line 194.
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--211
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 199--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--268
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-\OT1/cmr/m/n/9 cio-nal de Sin-ga-po-re Si-tio web: https://www.cs.au.dk/ ka-rra
-s/rg.pdf 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-
- []
-
-
-Overfull \hbox (208.98642pt too wide) in paragraph at lines 307--319
-\OT1/cmr/m/n/9 lo-gias alea-to-rias en emu-la-dor de red mi-ni-net. 2019, de Un
-i-ver-si-dad Cat^^Soli-ca De Pe-rei-ra Si-tio web: https://repositorio.ucp.edu.
-co/bitstream/10785/3678/1/CDMIST122.pdf
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-\OT1/cmr/m/n/9 https://dl.acm.org/doi/pdf/10.1145/3369782 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--319
-
- []
-
-
-Overfull \hbox (25.79749pt too wide) in paragraph at lines 307--319
-\OT1/cmr/m/n/9 https://www.cambridge.org/core/journals/network-science/article/
-artificial-benchmark-for-community-detection-abcdfast-
- []
-
-<calendario.png, id=36, 627.34375pt x 545.03625pt>
-File: calendario.png Graphic file (type png)
-<use calendario.png>
-Package pdftex.def Info: calendario.png  used on input line 321.
-(pdftex.def)             Requested size: 512.16609pt x 426.78989pt.
-
-Overfull \hbox (42.4107pt too wide) in paragraph at lines 321--322
+Overfull \hbox (29.0355pt too wide) in paragraph at lines 199--213
 [] 
  []
 
-[7] [8 <./calendario.png>] [9] (./thesisProfile.aux
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+
+Overfull \hbox (6.70847pt too wide) in paragraph at lines 279--306
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Overfull \hbox (45.89903pt too wide) in paragraph at lines 309--321
+\OT1/cmr/m/n/10.95 [B5] Bo-gu-mi l Ka-mins-ki, Pa-we l Pra lat2, (2021). Ar-ti-
+fi-cial Bench-mark for Com-mu-nity De-tec-tion(ABCD)|Fast
+ []
+
+
+Overfull \hbox (25.58057pt too wide) in paragraph at lines 309--321
+\OT1/cmr/m/n/10.95 https://www.cambridge.org/core/journals/network-science/arti
+cle/artificial-benchmark-for-community-
+ []
+
+
+Overfull \hbox (53.50316pt too wide) in paragraph at lines 309--321
+\OT1/cmr/m/n/10.95 detection-abcdfast-random-graph-model-with-community-structu
+re/453FE29A1FA3C1798B0EC116587FE422
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--321
+
+ []
+
+[7]
+<calendario.png, id=39, 627.34375pt x 545.03625pt>
+File: calendario.png Graphic file (type png)
+<use calendario.png>
+Package pdftex.def Info: calendario.png  used on input line 323.
+(pdftex.def)             Requested size: 512.16609pt x 426.78989pt.
+
+Overfull \hbox (42.4107pt too wide) in paragraph at lines 323--324
+[] 
+ []
+
+[8] [9 <./calendario.png>] [10] (./thesisProfile.aux
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ) ) 
 Here is how much of TeX's memory you used:
- 3378 strings out of 482056
- 50141 string characters out of 5937676
- 311667 words of memory out of 5000000
- 19020 multiletter control sequences out of 15000+600000
- 541153 words of font info for 54 fonts, out of 8000000 for 9000
+ 3368 strings out of 482056
+ 50050 string characters out of 5937676
+ 309667 words of memory out of 5000000
+ 19014 multiletter control sequences out of 15000+600000
+ 540007 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 30i,7n,35p,433b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,7n,35p,447b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/mijatola/Library/texlive/2020basic/texmf-var/fonts/pk/ljfour/jknapp
 en/ec/tcrm1095.600pk></usr/local/texlive/2020basic/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020basic/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020basic/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2020basic/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020basic/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020basic/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020basic/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020basic/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020basic
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020ba
-sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on thesisProfile.pdf (9 pages, 680923 bytes).
+e1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020basic/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020basic/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020basic/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020basic/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020basic/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020basic/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020basic
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on thesisProfile.pdf (10 pages, 667867 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
