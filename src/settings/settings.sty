@@ -1,0 +1,17 @@
+\ProvidesPackage{mystyle}
+    \usepackage[spanish,english]{babel}
+    \usepackage[utf8]{inputenc}
+    \usepackage[letterpaper,margin=2.54cm]{geometry}
+    \usepackage{graphicx}
+    \usepackage[spanish]{babel}
+    \usepackage{titlesec}
+    \usepackage{tocloft}%
+    \usepackage{import}
+    \selectlanguage{spanish}
+    \let \savenumberline \numberline
+    \def \numberline#1{\savenumberline{#1.}}
+    \graphicspath{{/Users/mijaeltola/Documents/umsa/taller/Thesis/src/images/}}
+
+    \newcommand\justificacion{Justificaci\'on }
+    \newcommand\guion{\item[-]}
+\endinput

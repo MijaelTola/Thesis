@@ -1,0 +1,19 @@
+\documentclass[11pt]{extarticle}
+
+\input{settings/settings.sty}
+
+\begin{document}
+    \import{/Users/mijaeltola/Documents/umsa/taller/Thesis/src/sections/}{cover.tex}
+    \titleformat*{\section}{\normalsize\bfseries\MakeUppercase}
+    \titleformat*{\subsection}{\normalsize\bfseries\MakeUppercase}
+    \titlelabel{\thetitle.\quad}
+    \tableofcontents
+    \newpage
+    \section{CAPITULO I}
+    \section{CAPITULO II \\ Marco Te\'orico}
+    \import{/Users/mijaeltola/Documents/umsa/taller/Thesis/src/sections/}{marco_teorico.tex}
+    \section{CAPITULO III \\ Marco Aplicativo}
+    \import{/Users/mijaeltola/Documents/umsa/taller/Thesis/src/sections/}{desarrollo.tex}
+    \section{CAPITULO IV \\ An\'alisis y resultados}
+    \section{CAPITULO V \\ Conclusiones y Recomendaciones}
+\end{document}

@@ -1,0 +1,26 @@
+\babel@toc {spanish}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}CAPITULO I}{3}{}%
+\contentsline {section}{\numberline {2}CAPITULO II \\ Marco Te\'orico}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Teoria de Grafos}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Grafos ac\'iclicos no dirigidos (DAG)}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Grafos bipartitos}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}Grafos completos}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.4}Caminos y Ciclos Hamiltonianos}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Numeros Aleatorios}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Programacion Din\'amica y Mascaras de Bits}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Mascaras de Bits}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Programacion din\'amica con mascaras de Bits}{3}{}%
+\contentsline {subsection}{\numberline {2.4}Cadenas de markov}{3}{}%
+\contentsline {subsection}{\numberline {2.5}Grafos Aleatorios}{3}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Modelo de Erdos-R\'enyi}{3}{}%
+\contentsline {subsubsection}{\numberline {2.5.2}Modelo de Configuraciones}{3}{}%
+\contentsline {subsubsection}{\numberline {2.5.3}Otros Modelos de grafos aleatorios}{3}{}%
+\contentsline {section}{\numberline {3}CAPITULO III \\ Marco Aplicativo}{3}{}%
+\contentsline {subsection}{\numberline {3.1}Modelo generador de grafos DAG}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Modelo generador de grafos Bipartitos}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Modelo generador de grafos Completos}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Algoritmo Validador del modelo}{3}{}%
+\contentsline {section}{\numberline {4}CAPITULO IV \\ An\'alisis y resultados}{3}{}%
+\contentsline {section}{\numberline {5}CAPITULO V \\ Conclusiones y Recomendaciones}{3}{}%
